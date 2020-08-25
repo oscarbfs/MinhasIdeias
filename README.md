@@ -1,0 +1,2 @@
+# MinhasIdeias
+Ideias que tive

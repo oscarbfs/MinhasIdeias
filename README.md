@@ -1,2 +1,3 @@
-# MinhasIdeias
-Ideias que tive
+# Minhas Ideias
+Ideias que tive:
+1° Calculadora quimica 

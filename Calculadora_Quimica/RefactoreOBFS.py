@@ -1,8 +1,8 @@
 import re
 
 print("Respeite a colocação dos parenteses e letras maiusculas")
-a = input('informe a molecula do acido: ')
-b = input('informe a molecuça da base: ')
+a = str(input('informe a molecula do acido de Arrhenius: '))
+b = str(input('informe a molecuça da base Arrhenius: '))
 
 
 class Molecula:
@@ -10,10 +10,10 @@ class Molecula:
         self.m_a = m_a
         self.m_b = m_b
 
-    def text_num_split(self):
-        for index, letter in enumerate(self, 0):
+    def text_num_split(self, atomo):
+        for index, letter in enumerate(atomo, 0):
             if letter.isdigit():
-                return [self[:index], self[index:]]
+                return [atomo[:index], atomo[index:]]
 
     def tratar_moleculas_dos_reagentes(self):
 
@@ -64,7 +64,7 @@ class Molecula:
         # Mols dos atomos da molecula basica
         m_b_new = self.m_b.replace(")", "(")
         m_b_new_1 = m_b_new.replace("(", "", 2)
-        m_d_b = re.sub(r"([A-Z])", r" \1", m_b_new_1).split()
+        m_d_b = re.sub(r'([A-Z])', r" \1", m_b_new_1).split()
 
         # Se a molecula basica tiver 3 atomos
         if len(m_d_b) == 3:
@@ -120,6 +120,7 @@ class Molecula:
         an = "".join(an)
         if quant_an == 2:
             an = "(" + an + ")"
+
         # pegar cation da base
         ca = mtr.m_d_b[:-2]
         if len(an) == 1:
@@ -129,6 +130,7 @@ class Molecula:
         ca = "".join(ca)
         if quant_ca == 2:
             ca = "(" + ca + ")"
+
         # formando sal e agua
         if mtr.mol_h_a == 1:
             ca = ca.replace(")", "(")
@@ -140,21 +142,110 @@ class Molecula:
         sal = sal.replace("1", '')
         agua = "H2O"
 
+    def artificio_balanciamento(self, localizacao, atomo):
+        for x in localizacao:
+            if x == atomo:
+                mol_at = 1
+                break
+            else:
+                mol_at = 0
+        return mol_at
 
     def balanciamento(self):
         mtr = Molecula.tratar_moleculas_dos_reagentes
+        mf = Molecula.formacao_produtos
+        ma = Molecula.artificio_balanciamento
 
         mol_ac = 1
         mol_ba = 1
         mol_sal = 1
         mol_ag = 1
 
-        for x in mtr.m_d_b:
-            if x == mtr.m_d_a[1]:
-                mol_an_ab = 'y' # usa oq fiz pra achar o mol o cl ou mg
+        if len(mtr.m_d_a) == 2 and len(mtr.m_d_b) == 3:
+            # obter os mols de hidrogenio no anion do acido e no cation da base
+            mol_h_an = ma(mf.an, "H")
+            mol_h_ca = ma(mf.ca, "H")
+
+            # obter mols do oxigenio
+            mol_o_an = ma(mf.an, "O")
+            mol_o_ca = ma(mf.ca, "O")
+
+            # obter mols do anion do acido no cation da base
+            mol_an = ma(mf.ca, mf.an) # ajeitar como descubrir o numero de mols
+            for x in mf.ca:
+                if x == mf.an:
+                    mol_an = 1
+                    break
+                else:
+                    mol_an = 0
+
+            # obter mols do cation da base no anon do acido
+            for x in mf.an:
+                if x == mf.ca:
+                    mol_ca = 1
+                    break
+                else:
+                    mol_ca = 0
+
+        elif len(mtr.m_d_a) == 2 and len(mtr.m_d_b) == 4:
+            for x in mf.an:
+                if x == "H":
+                    mol_h_an = 1
+                    break
+                else:
+                    mol_h_an = 0
+
+            for x in mf.ca:
+                if x == "H":
+                    mol_h_ca = 1
+                    break
+                else:
+                    mol_h_ca = 0
+
+            # obter mols do oxigenio
+            for x in mf.an:
+                if x == "O":
+                    mol_o_an = 1
+                    break
+                else:
+                    mol_o_an = 0
+
+            for x in mf.ca:
+                if x == "O":
+                    mol_o_ca = 1
+                    break
+                else:
+                    mol_o_ca = 0
+
+            # obter mols do anion do acido no cation da base
+            for x in mf.ca:
+                if x == mf.an:
+                    mol_an = 1
+                    break
+                else:
+                    mol_an = 0
+
+            # obter mols do cation da base no anon do acido
+            for x in mf.an:
+                if x == mf.ca:
+                    mol_ca = 1
+                    break
+                else:
+                    mol_ca = 0
+
+        elif len(mtr.m_d_a) == 3 and len(mtr.m_d_b) == 3:
+            pass
+        elif len(mtr.m_d_a) == 3 and len(mtr.m_d_b) == 4:
+            pass
+
+        for x in mf.an:
+            if x == "H":
+                mol_h_an = 1
                 break
             else:
-                mol_an_ab = 0
+                mol_h_an = 0
+
+
 
     def reacao_balanciada(self):
         pass
@@ -162,4 +253,3 @@ class Molecula:
 
 exe = Molecula(m_a=a, m_b=b)
 Molecula.reacao_balanciada(exe)
-

@@ -5,6 +5,7 @@ a = str(input('informe a molecula do acido de Arrhenius: '))
 b = str(input('informe a molecuça da base Arrhenius: '))
 
 
+# noinspection PyArgumentList
 class Molecula:
     def __init__(self, m_a, m_b):
         self.m_a = m_a
@@ -143,6 +144,7 @@ class Molecula:
         agua = "H2O"
 
     def artificio_balanciamento(self, localizacao, atomo):
+        global mol_at
         for x in localizacao:
             if x == atomo:
                 mol_at = 1
@@ -172,80 +174,54 @@ class Molecula:
 
             # obter mols do anion do acido no cation da base
             mol_an = ma(mf.ca, mf.an) # ajeitar como descubrir o numero de mols
-            for x in mf.ca:
-                if x == mf.an:
-                    mol_an = 1
-                    break
-                else:
-                    mol_an = 0
 
             # obter mols do cation da base no anon do acido
-            for x in mf.an:
-                if x == mf.ca:
-                    mol_ca = 1
-                    break
-                else:
-                    mol_ca = 0
+            mol_ca = ma(mf.an, mf.ca)
+
 
         elif len(mtr.m_d_a) == 2 and len(mtr.m_d_b) == 4:
-            for x in mf.an:
-                if x == "H":
-                    mol_h_an = 1
-                    break
-                else:
-                    mol_h_an = 0
-
-            for x in mf.ca:
-                if x == "H":
-                    mol_h_ca = 1
-                    break
-                else:
-                    mol_h_ca = 0
+            # obter os mols de hidrogenio no anion do acido e no cation da base
+            mol_h_an = ma(mf.an, "H")
+            mol_h_ca = ma(mf.ca, "H")
 
             # obter mols do oxigenio
-            for x in mf.an:
-                if x == "O":
-                    mol_o_an = 1
-                    break
-                else:
-                    mol_o_an = 0
-
-            for x in mf.ca:
-                if x == "O":
-                    mol_o_ca = 1
-                    break
-                else:
-                    mol_o_ca = 0
+            mol_o_an = ma(mf.an, "O")
+            mol_o_ca = ma(mf.ca, "O")
 
             # obter mols do anion do acido no cation da base
-            for x in mf.ca:
-                if x == mf.an:
-                    mol_an = 1
-                    break
-                else:
-                    mol_an = 0
+            mol_an = ma(mf.ca, mf.an)  # ajeitar como descubrir o numero de mols
 
             # obter mols do cation da base no anon do acido
-            for x in mf.an:
-                if x == mf.ca:
-                    mol_ca = 1
-                    break
-                else:
-                    mol_ca = 0
+            mol_ca = ma(mf.an, mf.ca)
 
         elif len(mtr.m_d_a) == 3 and len(mtr.m_d_b) == 3:
-            pass
+            # obter os mols de hidrogenio no anion do acido e no cation da base
+            mol_h_an = ma(mf.an, "H")
+            mol_h_ca = ma(mf.ca, "H")
+
+            # obter mols do oxigenio
+            mol_o_an = ma(mf.an, "O")
+            mol_o_ca = ma(mf.ca, "O")
+
+            # obter mols do anion do acido no cation da base
+            mol_an = ma(mf.ca, mf.an)  # ajeitar como descubrir o numero de mols
+
+            # obter mols do cation da base no anon do acido
+            mol_ca = ma(mf.an, mf.ca)
         elif len(mtr.m_d_a) == 3 and len(mtr.m_d_b) == 4:
-            pass
+            # obter os mols de hidrogenio no anion do acido e no cation da base
+            mol_h_an = ma(mf.an, "H")
+            mol_h_ca = ma(mf.ca, "H")
 
-        for x in mf.an:
-            if x == "H":
-                mol_h_an = 1
-                break
-            else:
-                mol_h_an = 0
+            # obter mols do oxigenio
+            mol_o_an = ma(mf.an, "O")
+            mol_o_ca = ma(mf.ca, "O")
 
+            # obter mols do anion do acido no cation da base
+            mol_an = ma(mf.ca, mf.an)  # ajeitar como descubrir o numero de mols
 
+            # obter mols do cation da base no anon do acido
+            mol_ca = ma(mf.an, mf.ca)
 
     def reacao_balanciada(self):
         pass

@@ -173,11 +173,10 @@ class Molecula:
             mol_o_ca = ma(mf.ca, "O")
 
             # obter mols do anion do acido no cation da base
-            mol_an = ma(mf.ca, mf.an) # ajeitar como descubrir o numero de mols
+            mol_an = ma(mf.ca, mf.an)  # ajeitar como descubrir o numero de mols
 
             # obter mols do cation da base no anon do acido
             mol_ca = ma(mf.an, mf.ca)
-
 
         elif len(mtr.m_d_a) == 2 and len(mtr.m_d_b) == 4:
             # obter os mols de hidrogenio no anion do acido e no cation da base
@@ -208,6 +207,7 @@ class Molecula:
 
             # obter mols do cation da base no anon do acido
             mol_ca = ma(mf.an, mf.ca)
+
         elif len(mtr.m_d_a) == 3 and len(mtr.m_d_b) == 4:
             # obter os mols de hidrogenio no anion do acido e no cation da base
             mol_h_an = ma(mf.an, "H")
@@ -224,7 +224,12 @@ class Molecula:
             mol_ca = ma(mf.an, mf.ca)
 
     def reacao_balanciada(self):
-        pass
+        mf = Molecula.formacao_produtos
+        mb = Molecula.balanciamento
+
+        reacao_balanciada = f'{mb.mol_ac + self.m_a} + {mb.mol_ba + self.m_b} -->' \
+                            f' {mb.mol_sal + mf.sal} + {mb.mol_ag + mf.agua}'
+        print(f'Reação balanciada: {reacao_balanciada}')
 
 
 exe = Molecula(m_a=a, m_b=b)

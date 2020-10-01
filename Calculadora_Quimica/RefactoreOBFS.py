@@ -118,9 +118,9 @@ class Molecula:
             quant_an = 2
         an.reverse()
         mtr.m_d_a.reverse()
-        an = "".join(an)
+        an_str = "".join(an)
         if quant_an == 2:
-            an = "(" + an + ")"
+            an_str = "(" + an_str + ")"
 
         # pegar cation da base
         ca = mtr.m_d_b[:-2]
@@ -128,18 +128,18 @@ class Molecula:
             quant_ca = 1
         else:
             quant_ca = 2
-        ca = "".join(ca)
+        ca_str = "".join(ca)
         if quant_ca == 2:
-            ca = "(" + ca + ")"
+            ca_str = "(" + ca_str + ")"
 
         # formando sal e agua
         if mtr.mol_h_a == 1:
-            ca = ca.replace(")", "(")
-            ca = ca.replace("(", "")
+            ca_str = ca_str.replace(")", "(")
+            ca_str = ca_str.replace("(", "")
         if mtr.mol_oh == 1:
-            an = an.replace(")", "(")
-            an = an.replace("(", "")
-        sal = ca + str(mtr.mol_h_a) + an + str(mtr.mol_oh)
+            an_str = an_str.replace(")", "(")
+            an_str = an_str.replace("(", "")
+        sal = ca_str + str(mtr.mol_h_a) + an_str + str(mtr.mol_oh)
         sal = sal.replace("1", '')
         agua = "H2O"
 

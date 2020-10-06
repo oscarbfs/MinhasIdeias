@@ -5,7 +5,7 @@ a = str(input('informe a molecula do acido de Arrhenius: '))
 b = str(input('informe a molecuça da base Arrhenius: '))
 
 
-# noinspection PyArgumentList
+# noinspection PyUnreachableCode
 class Molecula:
     def __init__(self, m_a, m_b):
         self.m_a = m_a
@@ -18,6 +18,7 @@ class Molecula:
 
     def tratar_moleculas_dos_reagentes(self):
 
+        global mol_h_a, mol_an, mol_an_2, mol_ca, mol_ca_2, mol_oh
         mt = Molecula.text_num_split
 
         # Mols dos atomos da molecula acida
@@ -33,7 +34,7 @@ class Molecula:
                 mol_h_a = int(m_d_a[0][1])
 
             # mol dos anions
-            m_d_a_1 = mt(m_d_a[1])
+            m_d_a_1 = mt(self, m_d_a[1])
             if m_d_a_1 is None:
                 mol_an = 1
             elif len(m_d_a_1) == 2:
@@ -71,7 +72,7 @@ class Molecula:
         if len(m_d_b) == 3:
 
             # mol do cation
-            m_d_b_0 = mt(m_d_b[0])
+            m_d_b_0 = mt(self, m_d_b[0])
             if m_d_b_0 is None:
                 mol_ca = 1
             elif len(m_d_b_0) == 2:
@@ -106,25 +107,34 @@ class Molecula:
             elif len(m_d_b[2]) == 2:
                 mol_oh = int(m_d_b[2][1])
 
+        lista = [m_d_a, mol_h_a, mol_an, mol_an_2, m_d_b, mol_ca, mol_ca_2, mol_oh]
+
+        return lista
+
     def formacao_produtos(self):
+
+        Molecula.tratar_moleculas_dos_reagentes(self)
         mtr = Molecula.tratar_moleculas_dos_reagentes
 
+        m_d_a = mtr()[0]
+        m_d_b = mtr()[4]
+
         # pegar o anion do acido
-        mtr.m_d_a.reverse()
-        an = mtr.m_d_a[:-1]
+        m_d_a.reverse()
+        an = m_d_a[:-1]
         if len(an) == 1:
             quant_an = 1
         else:
             quant_an = 2
         an.reverse()
-        mtr.m_d_a.reverse()
+        m_d_a.reverse()
         an_str = "".join(an)
         if quant_an == 2:
             an_str = "(" + an_str + ")"
 
         # pegar cation da base
-        ca = mtr.m_d_b[:-2]
-        if len(an) == 1:
+        ca = m_d_b[:-2]
+        if len(ca) == 1:
             quant_ca = 1
         else:
             quant_ca = 2
@@ -142,6 +152,8 @@ class Molecula:
         sal = ca_str + str(mtr.mol_h_a) + an_str + str(mtr.mol_oh)
         sal = sal.replace("1", '')
         agua = "H2O"
+
+        return sal, agua, an, ca, an_str, ca_str
 
     def artificio_balanciamento(self, localizacao, atomo):
         global mol_at
@@ -223,14 +235,19 @@ class Molecula:
             # obter mols do cation da base no anon do acido
             mol_ca = ma(mf.an, mf.ca)
 
+        return mol_ac, mol_ba, mol_sal, mol_ag
+
     def reacao_balanciada(self):
         mf = Molecula.formacao_produtos
         mb = Molecula.balanciamento
 
+        Molecula.formacao_produtos(self)
+        Molecula.balanciamento(self)
+
         reacao_balanciada = f'{mb.mol_ac + self.m_a} + {mb.mol_ba + self.m_b} -->' \
                             f' {mb.mol_sal + mf.sal} + {mb.mol_ag + mf.agua}'
-        print(f'Reação balanciada: {reacao_balanciada}')
+        print('Reação balanciada: ' + reacao_balanciada)
 
 
-exe = Molecula(m_a=a, m_b=b)
-Molecula.reacao_balanciada(exe)
+exe = Molecula(a, b)
+exe.reacao_balanciada()

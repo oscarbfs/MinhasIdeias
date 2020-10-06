@@ -1,76 +1,65 @@
-# Equação de neutralização com acidos e bases de Arrhenius
+import re
 
-mols = input('Informe o numero de mols da primeira molecula: ')
-atomo0 = input('Informe o primeiro atomo da primeira molecula (todos diferentes de H ou OH considerere como se todos juntos fossem um atomo só): ')
-atomo0_1 = input('Informe o segundo atomo da primeira molecula (todos diferentes de H ou OH considerere como se todos juntos fossem um atomo só): ')
-mols1 = input('Informe o numero de mols da segunda molecula: ')
-atomo1 = input('Informe o primeiro atomo da segunda molecula (todos diferentes de H ou OH considerere como se todos juntos fossem um atomo só): ')
-atomo1_1 = input('Informe o segundo atomo da segunda molecula (todos diferentes de H ou OH considerere como se todos juntos fossem um atomo só): ')
+# definindo acido e base
+print("Respeite a colocação dos parenteses e letras maiusculas")
+acido = str(input('informe a molecula do acido de Arrhenius: '))
+base = str(input('informe a molecuça da base Arrhenius: '))
 
-estrutura = mols + atomo0 + atomo0_1
-estrutura1 = mols1 + atomo1 + atomo1_1
+# dividindo a molecula de acido
+molecula_dividida_do_acido = re.sub(r"([A-Z])", r" \1", acido).split()
+
+if len(molecula_dividida_do_acido) == 2:
+    cation_do_acido = molecula_dividida_do_acido[0]
+    anion_do_acido = molecula_dividida_do_acido[1]
+elif len(molecula_dividida_do_acido) == 3:
+    cation_do_acido = molecula_dividida_do_acido[0]
+    anion_do_acido = molecula_dividida_do_acido[1] + molecula_dividida_do_acido[2]
+
+# dividindo a molecula da basse
+base = base.replace(")", "(")
+base = base.replace("(", "", 2)
+molecula_dividida_da_base = re.sub(r'([A-Z])', r" \1", base).split()
+
+if len(molecula_dividida_da_base) == 3:
+    cation_da_base = molecula_dividida_da_base[0]
+    anion_da_base = molecula_dividida_da_base[1] + molecula_dividida_da_base[2]
+elif len(molecula_dividida_da_base) == 4:
+    cation_da_base = molecula_dividida_da_base[0] + molecula_dividida_da_base[1]
+    anion_da_base = molecula_dividida_da_base[2] + molecula_dividida_da_base[3]
+
+
+def text_num_split(self, atomo):
+    for index, letter in enumerate(atomo, 0):
+        if letter.isdigit():
+            return [atomo[:index], atomo[index:]]
 
 
 class Molecula:
+    def __init__(self, cation, anion):
+        self.cation = cation
+        self.anion = anion
 
-    def __init__(self, *tipo, tipo1=None, formula=estrutura, formula1=estrutura1):
-        self.tipo = tipo
-        self.tipo1 = tipo1
-        self.formula = formula
-        self.formula1 = formula1
-        self.formula_pura = self.formula.replace(mols, '')
-        self.formula_pura1 =  self.formula1.replace(mols1, '')
-
-        if self.formula_pura.find('H') == 0:
-            self.tipo = 'acido'
-        elif self.formula_pura1.find('H') == 0:
-            self.tipo1 = 'acido'
-        else:
-            raise Exception('Deve haver pelo menos um ácido!')
-
-        if self.formula_pura.find('OH') != -1:
-            self.tipo = 'base'
-        elif self.formula_pura1.find('OH') != -1:
-            self.tipo1 = 'base'
-        else:
-            raise Exception('Deve haver pelo menos uma base!')
-
-    def balanciar(self):
+    def tratar_molecula(self):
+        """ Contar a quantitidade de mols de cada atomo no anion e cation """
         pass
 
 
-    def reacao_quimica(self):
+class Reacao:
+    def __init__(self, molecula1, molecula2):
+        self.acido = molecula1
+        self.base = molecula2
 
-        if self.tipo == 'acido':
-            newformula = self.formula_pura.replace('H', '')
-        elif self.tipo == 'base':
-            newformula1 = self.formula_pura.replace('OH', '')
+    def formacao_dos_produtos(self):
+        pass
 
-        if self.tipo1 == 'acido':
-            newformula = self.formula_pura1.replace('H', '')
-        elif self.tipo1 == 'base':
-            newformula1 = self.formula_pura1.replace('OH', '')
+    def balanciamneto(self):
+        pass
 
-        sal = newformula1 + newformula
-        reagentes = f'{self.formula} + {self.formula1}'
-        produto = f'{sal} + H2O'
-
-        if self.tipo == 'acido' and self.tipo1 == 'base' or self.tipo == 'base' and self.tipo1 == 'acido':
-            print(f'Equação não balanciada da reação quimica: {reagentes} = {produto}')
-            print(f'O sal formado foi: {sal}')
-
-    def informar_o_tipo(self):
-        if self == estrutura:
-            return self.tipo
-        elif self == estrutura1:
-            return self.tipo1
-
-estrutura = Molecula(formula=estrutura)
-estrutura1 = Molecula(formula1=estrutura1)
-print('A primeira molucela é um(a): ' + Molecula.informar_o_tipo(estrutura))
-print('A segunda molucela é um(a): ' + Molecula.informar_o_tipo(estrutura1))
-Molecula.reacao_quimica(estrutura)
+    def reagir(self):
+        pass
 
 
-#  H2SO4 + 2KOH  -> K2SO4 +2H2O
-# 2HCN + Zn(OH)2 -> ZN(CN)2 + 2H2O
+acido = Molecula(cation_do_acido, anion_do_acido)
+base = Molecula(cation_da_base, anion_da_base)
+reacao = Reacao(acido, base)
+reacao.reagir()

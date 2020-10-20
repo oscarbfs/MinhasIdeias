@@ -1,4 +1,8 @@
 import re
+from Calculadora_Quimica import funcoes
+
+ft = funcoes.text_num_split
+fca = funcoes.ca_an
 
 # definindo acido e base
 print("Respeite a colocação dos parenteses e letras maiusculas")
@@ -8,30 +12,34 @@ base = str(input('informe a molecuça da base Arrhenius: '))
 # dividindo a molecula de acido
 molecula_dividida_do_acido = re.sub(r"([A-Z])", r" \1", acido).split()
 
-if len(molecula_dividida_do_acido) == 2:
-    cation_do_acido = molecula_dividida_do_acido[0]
-    anion_do_acido = molecula_dividida_do_acido[1]
-elif len(molecula_dividida_do_acido) == 3:
-    cation_do_acido = molecula_dividida_do_acido[0]
-    anion_do_acido = molecula_dividida_do_acido[1] + molecula_dividida_do_acido[2]
+ca_an_do_acido = fca(
+    molecula_dividida_do_acido, 2, molecula_dividida_do_acido[0],
+    molecula_dividida_do_acido[1],
+    molecula_dividida_do_acido[0],
+    molecula_dividida_do_acido[1] + molecula_dividida_do_acido[2]
+)
+
+cation_do_acido = ca_an_do_acido[0]
+anion_do_acido = ca_an_do_acido[1]
+cation_do_acido_num_split = ft(ca_an_do_acido[2])
+anion_do_acido_num_split = ft(ca_an_do_acido[3])
 
 # dividindo a molecula da basse
 base = base.replace(")", "(")
 base = base.replace("(", "", 2)
 molecula_dividida_da_base = re.sub(r'([A-Z])', r" \1", base).split()
 
-if len(molecula_dividida_da_base) == 3:
-    cation_da_base = molecula_dividida_da_base[0]
-    anion_da_base = molecula_dividida_da_base[1] + molecula_dividida_da_base[2]
-elif len(molecula_dividida_da_base) == 4:
-    cation_da_base = molecula_dividida_da_base[0] + molecula_dividida_da_base[1]
-    anion_da_base = molecula_dividida_da_base[2] + molecula_dividida_da_base[3]
+ca_an_do_base = fca(
+    molecula_dividida_da_base, 3, molecula_dividida_da_base[0],
+    molecula_dividida_da_base[1] + molecula_dividida_da_base[2],
+    molecula_dividida_da_base[0] + molecula_dividida_da_base[1],
+    molecula_dividida_da_base[2] + molecula_dividida_da_base[3]
+)
 
-
-def text_num_split(self, atomo):
-    for index, letter in enumerate(atomo, 0):
-        if letter.isdigit():
-            return [atomo[:index], atomo[index:]]
+cation_da_base = ca_an_do_acido[0]
+anion_da_base = ca_an_do_acido[1]
+cation_da_base_num_split = ft(ca_an_do_base[2])
+anion_da_base_num_split = ft(ca_an_do_base[3])
 
 
 class Molecula:

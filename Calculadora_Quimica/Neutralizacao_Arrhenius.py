@@ -43,9 +43,11 @@ anion_da_base_num_split = ft(ca_an_do_base[3])
 
 
 class Molecula:
-    def __init__(self, cation, anion):
+    def __init__(self, cation, cation_list, anion, anion_list):
         self.cation = cation
+        self.cation_list = cation_list
         self.anion = anion
+        self.anion_list = anion_list
 
     def tratar_molecula(self):
         """ Contar a quantitidade de mols de cada atomo no anion e cation """

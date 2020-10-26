@@ -1,6 +1,10 @@
 import re
 
 
+def re_split(particula):
+    re.sub(r"([A-Z])", r" \1", particula).split()
+
+
 def ca_an(molecula, numero, parte_da_molecula, parte_da_molecula2, parte_da_molecula1_1, parte_da_molecula2_1):
     if len(molecula) == numero:
         cation = parte_da_molecula
@@ -24,7 +28,6 @@ def text_num_split(atomo):
 
 
 def artificio_balanciamento(localizacao, atomo):
-    global mol_at
     for x in localizacao:
         if x == atomo:
             mol_at = 1

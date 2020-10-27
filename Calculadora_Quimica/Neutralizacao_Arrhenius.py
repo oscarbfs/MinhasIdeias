@@ -21,15 +21,19 @@ ca_an_do_acido = fca(
 
 cation_do_acido = ca_an_do_acido[0]
 anion_do_acido = ca_an_do_acido[1]
-cation_do_acido_num_split = ft(ca_an_do_acido[2])
-anion_do_acido_num_split = ft(ca_an_do_acido[3])
+
+cation_do_acido_text_split = ca_an_do_acido[2]
+anion_do_acido_text_split = ca_an_do_acido[3]
+
+cation_do_acido_num_split = ft(cation_do_acido_text_split)
+anion_do_acido_num_split = ft(anion_do_acido_text_split)
 
 # dividindo a molecula da basse
 base = base.replace(")", "(")
 base = base.replace("(", "", 2)
 molecula_dividida_da_base = frs(base)  # re.sub(r'([A-Z])', r" \1", base).split()
 
-ca_an_do_base = fca(
+ca_an_da_base = fca(
     molecula_dividida_da_base, 3, molecula_dividida_da_base[0],
     molecula_dividida_da_base[1] + molecula_dividida_da_base[2],
     molecula_dividida_da_base[0] + molecula_dividida_da_base[1],
@@ -38,16 +42,18 @@ ca_an_do_base = fca(
 
 cation_da_base = ca_an_do_acido[0]
 anion_da_base = ca_an_do_acido[1]
-cation_da_base_num_split = ft(ca_an_do_base[2])
-anion_da_base_num_split = ft(ca_an_do_base[3])
+
+cation_da_base_text_split = ca_an_da_base[2]
+anion_da_base_text_split = ca_an_da_base[3]
+
+cation_da_base_num_split = ft(cation_da_base_text_split)
+anion_da_base_num_split = ft(anion_da_base_text_split)
 
 
 class Molecula:
-    def __init__(self, cation, cation_list, anion, anion_list):
+    def __init__(self, cation, anion):
         self.cation = cation
-        self.cation_list = cation_list
         self.anion = anion
-        self.anion_list = anion_list
 
     def tratar_molecula(self):
         """ Contar a quantitidade de mols de cada atomo no anion e cation """

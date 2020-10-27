@@ -27,6 +27,13 @@ def text_num_split(atomo):
             return [atomo[:index], atomo[index:]]
 
 
+def artificio_tratar_molecula(atomo):
+    for mol in atomo:
+        if not mol.isalpha():
+            mol_do_atomo = int(mol)
+    return mol_do_atomo
+
+
 def artificio_balanciamento(localizacao, atomo):
     for x in localizacao:
         if x == atomo:

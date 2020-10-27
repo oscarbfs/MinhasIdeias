@@ -3,6 +3,7 @@ from Calculadora_Quimica import funcoes
 ft = funcoes.text_num_split
 fca = funcoes.ca_an
 frs = funcoes.re_split
+fat = funcoes.artificio_tratar_molecula
 
 # definindo acido e base
 print("Respeite a colocação dos parenteses e letras maiusculas")
@@ -22,11 +23,11 @@ ca_an_do_acido = fca(
 cation_do_acido = ca_an_do_acido[0]
 anion_do_acido = ca_an_do_acido[1]
 
-cation_do_acido_text_split = ca_an_do_acido[2]
-anion_do_acido_text_split = ca_an_do_acido[3]
+cation_do_acido_list = ca_an_do_acido[2]
+anion_do_acido_list = ca_an_do_acido[3]
 
-cation_do_acido_num_split = ft(cation_do_acido_text_split)
-anion_do_acido_num_split = ft(anion_do_acido_text_split)
+cation_do_acido_num_split = ft(cation_do_acido)
+anion_do_acido_num_split = ft(anion_do_acido)
 
 # dividindo a molecula da basse
 base = base.replace(")", "(")
@@ -43,21 +44,26 @@ ca_an_da_base = fca(
 cation_da_base = ca_an_do_acido[0]
 anion_da_base = ca_an_do_acido[1]
 
-cation_da_base_text_split = ca_an_da_base[2]
-anion_da_base_text_split = ca_an_da_base[3]
+cation_da_base_list = ca_an_da_base[2]
+anion_da_base_list = ca_an_da_base[3]
 
-cation_da_base_num_split = ft(cation_da_base_text_split)
-anion_da_base_num_split = ft(anion_da_base_text_split)
+cation_da_base_num_split = ft(cation_da_base)
+anion_da_base_num_split = ft(anion_da_base)
 
 
 class Molecula:
-    def __init__(self, cation, anion):
+    def __init__(self, cation, anion, cation_list, anion_list, cation_num_split, anion_num_split):
         self.cation = cation
         self.anion = anion
+        self.cation_list = cation_list
+        self.anion_list = anion_list
+        self.cation_num_split = cation_num_split
+        self.anion_num_split = anion_num_split
 
     def tratar_molecula(self):
         """ Contar a quantitidade de mols de cada atomo no anion e cation """
-        pass
+        mol_do_cation = fat(self.cation_num_split)
+        mol_do_anion = fat(self.anion_num_split)
 
 
 class Reacao:
@@ -75,7 +81,15 @@ class Reacao:
         pass
 
 
-acido = Molecula(cation_do_acido, anion_do_acido)
-base = Molecula(cation_da_base, anion_da_base)
+acido = Molecula(
+    cation_do_acido, anion_do_acido,
+    cation_do_acido_list, anion_do_acido_list,
+    cation_do_acido_num_split, anion_do_acido_num_split
+)
+base = Molecula(
+    cation_da_base, anion_da_base,
+    cation_da_base_list, anion_da_base_list,
+    cation_da_base_num_split, anion_da_base_num_split
+)
 reacao = Reacao(acido, base)
 reacao.reagir()

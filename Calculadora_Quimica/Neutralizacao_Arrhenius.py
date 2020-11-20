@@ -3,7 +3,7 @@ from Calculadora_Quimica import funcoes
 ft = funcoes.text_num_split
 fca = funcoes.ca_an
 frs = funcoes.re_split
-fat = funcoes.artificio_tratar_molecula
+fatm = funcoes.artificio_tratar_molecula
 
 # definindo acido e base
 print("Respeite a colocação dos parenteses e letras maiusculas")
@@ -62,8 +62,10 @@ class Molecula:
 
     def tratar_molecula(self):
         """ Contar a quantitidade de mols de cada atomo no anion e cation """
-        mol_do_cation = fat(self.cation_num_split)
-        mol_do_anion = fat(self.anion_num_split)
+        mol_do_cation = fatm(self.cation_num_split)
+        mol_do_anion = fatm(self.anion_num_split)
+        list_mol = [mol_do_cation, mol_do_anion]
+        return list_mol
 
 
 class Reacao:
@@ -72,9 +74,12 @@ class Reacao:
         self.base = molecula2
 
     def formacao_dos_produtos(self):
-        pass
+        sal = self.base.cation + self.acido.anion
+        agua = "H2O"
+        produtos = f"{sal} + {agua}"
+        return produtos
 
-    def balanciamneto(self):
+    def balanciameto(self):
         pass
 
     def reagir(self):

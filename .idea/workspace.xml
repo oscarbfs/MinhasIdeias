@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897e3806-1d86-4988-b9d8-679e98a45ac0" name="Default Changelist" comment="Distância entre dois pontos no espaço">
+    <list default="true" id="897e3806-1d86-4988-b9d8-679e98a45ac0" name="Default Changelist" comment="Calendario, Clima, Relogio Digital,">
       <change afterPath="$PROJECT_DIR$/Praticando/Calendário.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Praticando/Clima.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Praticando/Relógio digital.py" afterDir="false" />
@@ -276,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621342938395</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Calendario, Clima, Relogio Digital,">
+      <created>1621347271671</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1621347271671</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +304,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="implementado tratar molecula e formação de produtos" />
     <MESSAGE value="Distância entre dois pontos no espaço" />
-    <option name="LAST_COMMIT_MESSAGE" value="Distância entre dois pontos no espaço" />
+    <MESSAGE value="Calendario, Clima, Relogio Digital," />
+    <option name="LAST_COMMIT_MESSAGE" value="Calendario, Clima, Relogio Digital," />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1621344415294">

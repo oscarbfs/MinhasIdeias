@@ -5,15 +5,15 @@ def re_split(particula):
     re.sub(r"([A-Z])", r" \1", particula).split()
 
 
-def ca_an(molecula, numero, parte_da_molecula, parte_da_molecula2, parte_da_molecula1_1, parte_da_molecula2_1):
+def ca_an(molecula, numero, parte_da_molecula, parte_da_molecula2):
     if len(molecula) == numero:
-        cation = parte_da_molecula
-        anion = parte_da_molecula2
+        cation = str(parte_da_molecula)
+        anion = str(parte_da_molecula2)
         cation_list = re.sub(r"([A-Z])", r" \1", cation).split()
         anion_list = re.sub(r"([A-Z])", r" \1", anion).split()
     elif len(molecula) == numero + 1:
-        cation = parte_da_molecula1_1
-        anion = parte_da_molecula2_1
+        cation = str(parte_da_molecula)
+        anion = str(parte_da_molecula2)
         cation_list = re.sub(r"([A-Z])", r" \1", cation).split()
         anion_list = re.sub(r"([A-Z])", r" \1", anion).split()
 

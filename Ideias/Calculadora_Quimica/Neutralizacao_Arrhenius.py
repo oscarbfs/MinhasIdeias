@@ -1,4 +1,5 @@
 from Calculadora_Quimica import funcoes
+import re
 
 ft = funcoes.text_num_split
 fca = funcoes.ca_an
@@ -11,14 +12,19 @@ acido = str(input('informe a molecula do acido de Arrhenius: '))
 base = str(input('informe a molecuça da base Arrhenius: '))
 
 # dividindo a molecula de acido
-molecula_dividida_do_acido = frs(acido)  # re.sub(r"([A-Z])", r" \1", acido).split()
+molecula_dividida_do_acido = re.sub(r"([A-Z])", r" \1", acido).split()
 
-ca_an_do_acido = fca(
-    molecula_dividida_do_acido, 2, molecula_dividida_do_acido[0],
-    molecula_dividida_do_acido[1],
-    molecula_dividida_do_acido[0],
-    molecula_dividida_do_acido[1] + molecula_dividida_do_acido[2]
-)
+if len(molecula_dividida_do_acido) == 2:
+    ca_an_do_acido = fca(
+        molecula_dividida_do_acido, 2, molecula_dividida_do_acido[0],
+        molecula_dividida_do_acido[1],
+    )
+elif len(molecula_dividida_do_acido) == 3:
+    ca_an_do_acido = fca(
+        molecula_dividida_do_acido, 2,
+        molecula_dividida_do_acido[0],
+        molecula_dividida_do_acido[1] + molecula_dividida_do_acido[2]
+    )
 
 cation_do_acido = ca_an_do_acido[0]
 anion_do_acido = ca_an_do_acido[1]
@@ -32,14 +38,19 @@ anion_do_acido_num_split = ft(anion_do_acido)
 # dividindo a molecula da basse
 base = base.replace(")", "(")
 base = base.replace("(", "", 2)
-molecula_dividida_da_base = frs(base)  # re.sub(r'([A-Z])', r" \1", base).split()
+molecula_dividida_da_base = re.sub(r'([A-Z])', r" \1", base).split()
 
-ca_an_da_base = fca(
-    molecula_dividida_da_base, 3, molecula_dividida_da_base[0],
-    molecula_dividida_da_base[1] + molecula_dividida_da_base[2],
-    molecula_dividida_da_base[0] + molecula_dividida_da_base[1],
-    molecula_dividida_da_base[2] + molecula_dividida_da_base[3]
-)
+if len(molecula_dividida_do_acido) == 2:
+    ca_an_da_base = fca(
+        molecula_dividida_da_base, 3, molecula_dividida_da_base[0],
+        molecula_dividida_da_base[1] + molecula_dividida_da_base[2],
+    )
+elif len(molecula_dividida_do_acido) == 3:
+    ca_an_da_base = fca(
+        molecula_dividida_da_base, 3,
+        molecula_dividida_da_base[0] + molecula_dividida_da_base[1],
+        molecula_dividida_da_base[2] + molecula_dividida_da_base[3]
+    )
 
 cation_da_base = ca_an_do_acido[0]
 anion_da_base = ca_an_do_acido[1]
@@ -83,7 +94,11 @@ class Reacao:
         pass
 
     def reagir(self):
-        pass
+        produtos = self.formacao_dos_produtos()
+        reagentes = f'{self.acido} + {self.base}'
+        equacao = f'{reagentes} --> {produtos}'
+        print(equacao)
+        print(reagentes)
 
 
 acido = Molecula(

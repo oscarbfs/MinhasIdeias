@@ -1,6 +1,6 @@
 # Pontos
-p1 = [4, -8, -9]
-p2 = [2, -3, -5]
+p1 = [1, 1, 1]
+p2 = [2, 2, 2]
 
 # Criando listas para receber as subtrações e os quadrados
 subtracao = []

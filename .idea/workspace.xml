@@ -19,17 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897e3806-1d86-4988-b9d8-679e98a45ac0" name="Default Changelist" comment="implementado tratar molecula e formação de produtos">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Praticando/Distância entre dois pontos no espaço.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Praticando/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Ideias.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Praticando.iml" afterDir="false" />
+    <list default="true" id="897e3806-1d86-4988-b9d8-679e98a45ac0" name="Default Changelist" comment="Distância entre dois pontos no espaço">
+      <change afterPath="$PROJECT_DIR$/Praticando/Calendário.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Praticando/Clima.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Praticando/Relógio digital.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora_Quimica/Neutralizacao_Arrhenius.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Calculadora_Quimica/Neutralizacao_Arrhenius.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora_Quimica/RefactoreOBFS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Calculadora_Quimica/RefactoreOBFS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora_Quimica/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Calculadora_Quimica/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora_Quimica/funcoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Calculadora_Quimica/funcoes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Praticando/Distância entre dois pontos no espaço.py" beforeDir="false" afterPath="$PROJECT_DIR$/Praticando/Distância entre dois pontos no espaço.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +58,70 @@
       <recent name="C:\Users\OscarBorges\PycharmProjects\MinhasIdeias\Ideias" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Neutralizacao_Arrhenius">
+  <component name="RunManager" selected="Python.Clima">
+    <configuration name="Calendário" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Praticando" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Praticando" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Praticando/Calendário.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Clima" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Praticando" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Praticando" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Praticando/Clima.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Distância entre dois pontos no espaço" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Praticando" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Praticando" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Praticando/Distância entre dois pontos no espaço.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Neutralizacao_Arrhenius" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Praticando" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="RefactoreOBFS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Relógio digital" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Praticando" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,106 +151,26 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Calculadora_Quimica" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Praticando" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Calculadora_Quimica/RefactoreOBFS.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\OscarBorges\PycharmProjects\MinhasIdeias\Praticando\Relógio digital.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Praticando" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Praticando" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Doctests in test" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <module name="Praticando" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Calculadora_Quimica" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Calculadora_Quimica/test.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="Praticando" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="Praticando" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Clima" />
+        <item itemvalue="Python.Relógio digital" />
+        <item itemvalue="Python.Calendário" />
+        <item itemvalue="Python.Distância entre dois pontos no espaço" />
         <item itemvalue="Python.Neutralizacao_Arrhenius" />
-        <item itemvalue="Python.RefactoreOBFS" />
-        <item itemvalue="Python tests.Doctests in test" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605907121994</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Distância entre dois pontos no espaço">
+      <created>1621342938395</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1621342938395</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,24 +296,33 @@
     <MESSAGE value="implementando balanciar" />
     <MESSAGE value="commit" />
     <MESSAGE value="implementado tratar molecula e formação de produtos" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementado tratar molecula e formação de produtos" />
+    <MESSAGE value="Distância entre dois pontos no espaço" />
+    <option name="LAST_COMMIT_MESSAGE" value="Distância entre dois pontos no espaço" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1620139116502">
+    <state x="309" y="42" key="#Inspections" timestamp="1621344415294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1620139116502" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1620139116502">
+    <state x="309" y="42" key="#Inspections/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621344415294" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1621346677435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1620139116502" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1620139116502">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621346677435" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1621346677435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1620139116502" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1620139116502">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621346677435" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1621346677435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1620139116502" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621346677435" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1621346677435">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621346677435" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1621342966433">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/0.-768.1360.728@0.0.1366.728" timestamp="1621342966433" />
   </component>
 </project>
